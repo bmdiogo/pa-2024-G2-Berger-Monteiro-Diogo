@@ -81,5 +81,7 @@ public class Student
     public void print()
     {
         System.out.println("  "+name + ", ID: " + id + ", credits: " + credits);
+        System.out.println("  "+"Monica Geller" + ", A00234" + ",  credits: "+ "24");
     }
 }
+	
