@@ -19,6 +19,8 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // Lo que sobra o falta
+    private int x;
 
    
 
@@ -67,13 +69,32 @@ public class TicketMachine
      * reduce the balance to zero.
      */
     public void printTicket()
-    {  
-        // Simulate the printing of a ticket.
+    {  // comprobaciones
+      if (balance==price) {
         System.out.println("##################");
         System.out.println("# Ticket");
         System.out.println("# " + price + " cents.");
         System.out.println("##################");
         System.out.println();
+        total= total + price;//añadir el precio del ticket a las ganancias
+        balance=0;//no hay cambio
+      }
+      else if(balance>price) {
+    	  x=balance-price;
+        	System.out.println("Le sobran " + x + "céntimos. Puede solicitar la devolución");
+        	System.out.println("##################");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
+            total= total + price;//añadir el precio del ticket a las ganancias
+            balance=x;// el cambio
+        }
+      else {
+    	  x= price - balance;
+    	  System.out.println("Introduzca al menos " + x + " centimos mas");
+      }
+        	
 
         // Update the total collected with the balance.
         total = total + balance;
@@ -84,6 +105,9 @@ public class TicketMachine
     
     public int getTotal() {
         return total;
+    }
+    public void refundBalance() {
+    	balance=0;
     }
 }
     
