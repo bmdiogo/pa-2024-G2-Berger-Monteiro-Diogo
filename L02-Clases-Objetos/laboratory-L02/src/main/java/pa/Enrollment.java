@@ -15,7 +15,7 @@ public class Enrollment {
     	System.out.print("imprime la cadena sin retorno de carro\n");
     	System.out.println(" Lista de estudiantes:\n");
     	Student estudiante1;
-    	   estudiante1= new Student("Moica Geller","A00234");
+    	   estudiante1= new Student("Monica Geller","A00234");
     	   estudiante1.addCredits(24);
     	   System.out.println("Nombre:"+ estudiante1.getName() + "  ID:" + estudiante1.getStudentID() + " Creditos:" + estudiante1.getCredits());
        	

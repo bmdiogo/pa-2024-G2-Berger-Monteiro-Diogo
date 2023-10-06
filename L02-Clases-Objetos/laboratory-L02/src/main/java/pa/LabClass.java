@@ -16,8 +16,7 @@ public class LabClass
     private String timeAndDay;
     private ArrayList<Student> students;
     private int capacity;
-    
-    /**
+	/**
      * Create a LabClass with a maximum number of enrolments. All other details
      * are set to default values.
      */
