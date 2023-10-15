@@ -43,8 +43,11 @@ public class Book
     }
     
     public void setRefNumber(String ref) {
-    	if (ref.length()<2) {
+    	if (ref.length()<3) {
     		System.out.println("ERROR: El número de referencia del libro "+title+" debe contener al menos tres caracteres");
+    	}
+    	else {
+    		refNumber=ref;
     	}
     }
     
@@ -65,12 +68,12 @@ public class Book
     	System.out.println("--Autor: " +author);
     	System.out.println("--Título: " + title);
     	System.out.println("--Nº de páginas: "+pages);
-    	if (refNumber.length()!= 0) {
-    	 System.out.println("--Nº referencia: "+refNumber);
+    	System.out.println("--Nº referencia: ");
+    	if (refNumber.length()== 0) {
+    		System.out.println("ZZZZ");
     	}
     	else {
-    		System.out.println(refNumber.length()+ "caracteres");
-    		System.out.println("--Nº referencia: ZZZ");
+    		System.out.println(refNumber);
     	}
     	System.out.println("--Nº préstamos:"+ borrowed);
     	System.out.println("\n-----------------------");
