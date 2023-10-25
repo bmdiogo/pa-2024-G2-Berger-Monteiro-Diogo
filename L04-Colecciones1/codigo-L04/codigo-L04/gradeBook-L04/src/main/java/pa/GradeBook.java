@@ -1,5 +1,7 @@
 package pa;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 public class GradeBook {
 
 	private String courseName;
@@ -10,8 +12,8 @@ public class GradeBook {
 		this.courseName=courseName;
 		this.grades=grades;
 	}
-	public setCourseName(String course) {
-		this.course=courseName;
+	public void setCourseName(String course) {
+		course=courseName;
 	}
 	public String getCourseName() {
 		return courseName;
@@ -20,17 +22,17 @@ public class GradeBook {
 		
 	}
 	public int getMinimun() {
-		minimo=grades.get(0);
+	minimo=grades.get(0);
 		for (int nota:grades) {
 			if (nota<minimo) {
 				minimo=nota;
 		}
-		return minimo;
+	return minimo;
 	
 	}
 	
 	public int getMaximun() {
-		maximo=grades.get(0);
+	     maximo=grades.get[0];
 		for (int nota:grades) {
 			if (nota>maximo) {
 				maximo=nota;
@@ -39,7 +41,7 @@ public class GradeBook {
 		
 	}
 	public double getAverage() {
-		size=grades.length
+		size=grades.size
 		suma=0
 		for (int nota:grades) {
 			suma+= nota;
@@ -49,7 +51,15 @@ public class GradeBook {
 			
 	}
 	public void printBarchart() {
-		
+		System.out.println("Histograma de notas de la asignatura: " + courseName);
+		int intervalos= new int[10];
+		for (int nota:grades) {
+			intervalos(grade/10++); // contador de intervalo
+		}
+		for (int i=0, i<intervalos.lenght,i++) {
+			System.out.println(String.format("%02d-%02d; %d", i*10,i*10+9,intervalos[i]));
+		}
+			
 	}
 	public void printGrades(){
 		
