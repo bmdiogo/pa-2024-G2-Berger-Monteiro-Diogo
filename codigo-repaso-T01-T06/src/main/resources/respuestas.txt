@@ -1,0 +1,83 @@
+Respuestas a las cuestiones:
+
+EJERCICIO 1
+a. Contestada en los comentarios incluidos en el código de la clase Doctor
+
+b. Implementamos, por ejemplo, los métodos getEspecialidad() y atiendeUrgencias() (Ver código)
+c. Implementamos, por ejemplo, los métodos setNumPacientes() y setEspecialidad() (Ver código)
+d. Descripción abstracta de la clase Doctor
+
+  Nombre de la clase:   Clase Doctor
+  Campos:               - nombre: String
+                        - especialidad: String
+                        - num_pacientes: int
+                        - urgencias; boolean
+  Métodos:              + Doctor(String, String, boolean)
+                        + getEspecialidad(): String
+                        + atiendeUrgencias(): boolean
+                        + setNumPacientes(int): void
+                        + setEspecialidad(Sring): void
+Nota: Habría que dibujar los rectángulos tal y como hemos visto en clase separando el nombre de la clase, de los campos y de los métodos. Recuerda que tienes que indicar si los campos y/o métodos son privados (-), públicos (+), o protected (#)
+ 
+e. Ver código
+      
+f. Ver comentarios del código
+
+g. Ver código
+
+h. Ver código
+
+i. Ver código
+
+j. Supongamos que nuestro directorio de trabajo, que contiene el repositorio git, es $HOME/dir. Y que la carpeta que contiene el proyecto Maven (con nombre "ejercicios") es $HOME/pa. Supongamos también que estamos en $HOME. Los pasos que tenemos que seguir son:
+- Copiar la carpeta $HOME/pa/ejercicios y todo su contenido en $HOME/dir
+  (comando cp -r pa/ejercicios dir)
+- Situarnos en la raíz del directorio de trabajo
+  (comando cd dir)
+- Ejecutar git add . (este comando mueve al área stage todos los ficheros del directorio 
+  dir (y sus subdidrectorios). Dichos ficheros se "subirán" al repositorio local en el siguiente commit
+- Ejecutar git commit -m"Mensaje" (este comando sube al repositorio local todos los ficheros que del área stage)
+- Ejecutar git push (este comando sube al repositorio remoto los ficheros incluidos en el commit anterior)
+
+EJERCICIO 2
+a. "git init" crea un repositorio local git VACIO. Con este comando podremos trabajar con git localmente. Nuestro repositorio local (situado en la carpeta oculta .git) así creado NO está conectado con ningún repositorio remoto (por ejemplo, con nuestro repositorio de GitHub). 
+
+Por otro lado, el comando "git clone" crea una copia en nuestra máquina local de un repositorio remoto ya existente indicado como parámetro (con su contenido actual). Si utilizamos clone, YA tenemos CONECTADOS nuestro repositorio local con el remoto, por lo que podremos trabajar con git tanto localmente como de forma remota (podremos realizar un git push, sin necesidad de realizar ninguna configuración adicional).
+ 
+b. (1) FALSO. GitHub NO es un sistema de gestión de versiones, es un sitio de almacenamiento en la nube que nos permite alojar repositorios remotos GIT. Git si es un sistema de gestión de versiones.
+   (2) FALSO. En ambos casos tendremos en nuestra máquina local un repositorio git vacío. 
+Pero si creamos el repositorio con git init, NO hay ninguna conexión entre nuestro repositorio local y un repositorio remoto. 
+Si tenemos un repositorio remoto vacío, y hacemos un git clone, nuestro repositorio local estará CONECTADO con el repositorio remoto.
+
+EJERCICIO 3: 
+a. Sí sería buena idea establecer una relación de herencia entre las clase Vehiculo (clase padre) y Turismo (clase hija), porque entre ellas se puede establecer una relación "es un": un Turismo ES UN Vehiculo.
+   Al establecer dicha relación de herencia, podemos ahorrar código, ya que en la clase padre pondremos todo el código (atributos y métodos) que van a ser comunes en las subclases.
+   En este caso la clase padre (o superclase) debería ser Vehiculo, y la clase hija (o subclase) debería ser Turismo, ya que cualquier Turismo ES también un Vehículo, pero al revés no se cumple (no cualquier
+   Vehiculo necesariamente es un Turismo). Podemos tener otros subtipos, como Bicicletas, Tractores, Limusinas,...
+
+b y c. Ver implementación del paquete pa.repaso.ejercicio3.sinHerencia
+   Ver implementación del paquete pa.repaso.ejercicio3.conHerencia
+
+d. Sí sería conveniente usar una clase abstracta (Vehiculo) ya que NO vamos a necesitar crear instancias de Vehiculo.
+   Ver códigos en paquete pa.repaso.ejercicio3.conClasesAbstractas
+
+e. Ver pa.repaso.ejercicio3.PruebaConPolimorfismo y 
+   pa.repaso.ejercicio3.PruebaSinPolimorfismo
+   
+
+
+
+EJERCICIO 4. 
+
+apartado a: ver pa.repaso.ejercicio4.personas1
+
+apartado b: ver pa.repaso.ejercicio4.personas2
+
+apartado c: ver pa.repaso.ejercicio4.listadosPacientes
+
+apartado d): 
+   Código 1 (ver pa.repaso.ejercicio4.Bucles.bucleQueNOFunciona())
+   Código 2 (ver pa.repaso.ejercicio4.Bucles.bucleQueFunciona())
+   Código 3 (ver pa.repaso.ejercicio4.Bucles.bucleInfinito())
+   
+apartados e y f: ver código en paquete pa.repaso.baraja
