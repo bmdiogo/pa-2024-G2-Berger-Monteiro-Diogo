@@ -10,6 +10,9 @@ public class VirtualPerson  {
 	public VirtualPerson(String name) {
 		
 		this.name = name;
+		if(name.isEmpty()) {
+			this.name="anonimo";
+		}
 	}
 	public VirtualPerson() {}
 	public String getName() {

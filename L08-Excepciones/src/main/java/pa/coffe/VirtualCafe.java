@@ -22,6 +22,8 @@ public class VirtualCafe {
 	}
 	public VirtualCafe(String name) {
 		this.name = name;
+		System.out.println("La cafetería " +name+" abre sus puertas.");
+		this.clientes=new ArrayList<>();
 	}
 	
 	public int getNumberClientes() {
