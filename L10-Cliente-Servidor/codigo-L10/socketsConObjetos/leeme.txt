@@ -1,0 +1,10 @@
+Ejecutar desde dos terminales:
+
+Terminal del CLIENTE
+mvn clean compile
+mvn exec:java -Dexec.mainClass=pa.cliente.MailClientSocket
+
+Terminal del SERVIDOR
+mvn clean compile
+mvn exec:java -Dexec.mainClass=pa.servidor.MailServerSocket
+
