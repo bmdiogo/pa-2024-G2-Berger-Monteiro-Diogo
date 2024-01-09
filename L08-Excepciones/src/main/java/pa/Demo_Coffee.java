@@ -35,8 +35,16 @@ public class Demo_Coffee {
 	    	System.out.println("-"+c.getName());
 	    	
 	    }
-	    
+	   while(cafes.size()!=0) {
+	    	if(dg.serveCustomer(dg.getNextClient(),cafes.get(0))) {
+	    		dg.cobrarCafe(true);
+	    		
+	    	};
+	    	cafes.remove(0);
+	    }
+	    System.out.println(dg.getGanancias());
 
 	}
+
 
 }

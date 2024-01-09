@@ -1,4 +1,4 @@
-package pa.sinInterfaces;
+package pa;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,7 +26,7 @@ public class Ascensor {
 	private int piso_actual;
 	private Scanner lector;
 	
-	public Ascensor() {
+	public Ascensor(AccesoDatos obj) {
 		piso_actual=0;
 		peticiones=new ArrayList<>();
 		peticiones_validas=new ArrayList<>();

@@ -29,7 +29,7 @@ public class VirtualCafe {
 	public int getNumberClientes() {
 		return clientes.size();
 	}
-	private void cobrarCafe(boolean propina) {
+	public void cobrarCafe(boolean propina) {
 		double cobrado;
 		if (propina==true) {
 			cobrado=PRECIO_CAFE+PROPINA;			
@@ -46,7 +46,7 @@ public class VirtualCafe {
 			System.out.println("El cliente " +cliente.getName()+" ha entrado en la cafetería " + name);
 		}
 	}
-	public boolean serveCustormer(VirtualPerson cust, CoffeeCup cup) {
+	public boolean serveCustomer(VirtualPerson cust, CoffeeCup cup) {
 		System.out.println("Hola Cliente " + cust.getName()+",aquí tiene su café.");
 		boolean segundo=false;
 		try {

@@ -9,5 +9,23 @@ package pa;
  */
 public class Peticion {
 	//los atributos se llamarán "piso_destino" e "id" y son privados.
+	private int piso_destino;
+	private int id;
+	private static int nextId=0;
+	
+	public Peticion(int piso) {
+		this.piso_destino=piso;
+		this.id= nextId;
+		nextId++;	
+		}
+	
+	public int getPiso_destino() {
+		return piso_destino;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
 	
 }

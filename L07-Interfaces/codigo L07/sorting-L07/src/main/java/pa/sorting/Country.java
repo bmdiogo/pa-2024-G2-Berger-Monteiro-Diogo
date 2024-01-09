@@ -31,8 +31,8 @@ public class Country implements IOrdenable
 		// Lo ordenamos por nombre
 		Country pais=(Country) iordenable1; //cast introduce iordenable y lo trata como un Country
 		return  (name.compareTo(pais.getName())<0) ;//sacar el if, no cal crear variable, el compareto devuelve el bool
-
-		
+			//hay que usar un metodo de Country en pais despues de usar el cast, sino lanza una excepcion
+ 		
 		
 	}
 

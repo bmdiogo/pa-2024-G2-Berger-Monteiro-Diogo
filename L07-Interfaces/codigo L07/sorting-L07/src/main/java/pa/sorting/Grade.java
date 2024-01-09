@@ -28,7 +28,7 @@ public class Grade implements IOrdenable {
 	public boolean menorQue(IOrdenable iordenable1) {
 		boolean menor = false;
 		Grade nota = (Grade) iordenable1;
-		if (value < nota.getValue()) {
+		if (value < nota.getValue()) {// cast e implementar metodo
 			menor = true;
 		}
 		return menor;

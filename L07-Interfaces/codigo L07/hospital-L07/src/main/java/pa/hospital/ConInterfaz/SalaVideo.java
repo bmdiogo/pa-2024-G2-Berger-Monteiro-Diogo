@@ -2,7 +2,7 @@ package pa.hospital.ConInterfaz;
 
 public class SalaVideo implements IGestion {
 	private String sala;
-	private static int nextId=0;
+	private static int nextId=100;
 	public SalaVideo() {
 		sala="Sala de Vídeo-"+ nextId;
 		nextId++;
