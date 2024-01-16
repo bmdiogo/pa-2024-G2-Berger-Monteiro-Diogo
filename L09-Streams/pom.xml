@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>pa</groupId>
-  <artifactId>coffee-shop-L08</artifactId>
+  <artifactId>facturas-L09</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 <properties>
@@ -18,13 +18,12 @@
 <configuration>
 <archive>
 <manifest>
-<mainClass>
-pa.Demo_coffee
-</mainClass>
+<mainClass> pa.Facturacion</mainClass>
 </manifest>
 </archive>
 </configuration>
 </plugin>
 </plugins>
+<finalName> facturacion </finalName>
 </build>
 </project>
