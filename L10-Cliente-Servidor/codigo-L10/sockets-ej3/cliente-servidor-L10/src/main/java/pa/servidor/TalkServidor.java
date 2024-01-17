@@ -11,7 +11,7 @@ public class TalkServidor {
 
 	public static void main(String [] args) {
 	       int port = 6066;
-	       final int MILISEG_ESPERA = 10000;
+	       final int MILISEG_ESPERA = 120000;
 	       
 	       try (ServerSocket serverSocket= new ServerSocket(port);) {
 	        	System.out.println("Server says: Esperando al cliente en el puerto " +
@@ -28,12 +28,14 @@ public class TalkServidor {
 	                        new DataOutputStream(server.getOutputStream());) {
 	                    
 	                 System.out.println("Server says: Acabo de conectar con " + server.getRemoteSocketAddress());
-	            
+	            while(in.readUTF()!="Bye") {
 	                 System.out.println("Client says: "+in.readUTF());
 	             
-	                 out.writeUTF("Gracias por conectarte con " + server.getLocalSocketAddress()
-	                               + " Hasta la próxima!");
 	                 
+	                 out.writeUTF("Recuerda que debes teclear Bye para terminar la conversación...");
+	            }
+	            out.writeUTF("Gracias por conectarte con " + server.getLocalSocketAddress()
+                + " Hasta la próxima!");
 	            }catch(SocketTimeoutException s) {
 	                System.out.println("Socket timed out!");
 	                System.out.println("No se ha recibido ninguna petición de conexión en "
@@ -50,4 +52,4 @@ public class TalkServidor {
 
 	}
 
-}
+

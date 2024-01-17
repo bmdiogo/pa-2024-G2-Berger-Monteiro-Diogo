@@ -1,6 +1,8 @@
 package pa;
 
-
+import java.io.Serializable;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 /**
  * A class to model a simple mail item. The item has sender and recipient
  * addresses and a message string.
@@ -8,8 +10,9 @@ package pa;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
-public class MailItem {
-    // The sender of the item.
+public class MailItem implements Serializable {
+    private static final long serialVersionUID = 1234567L;
+	// The sender of the item.
     private String from;
     // The intended recipient.
     private String to;
@@ -68,5 +71,7 @@ public class MailItem {
         System.out.println("Message: " + message);
         System.out.println();
     }
-    
+  FileOutputStream fileOut=new FileOutputStream("fichero.txt");
+  ObjectOutputStream objOut=new ObjectOutputStream(fileOut);
+  ObjectOutputStream.writeObject(MailItem);
 }

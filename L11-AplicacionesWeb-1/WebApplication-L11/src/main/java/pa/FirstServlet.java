@@ -32,11 +32,14 @@ public class FirstServlet extends HttpServlet {
 		out.println("<p>Mi ruta de acceso es: "+ruta+" </p>");
 		out.println("<p>Un servlet es una clase java</p>");
 		out.println("<p> Pulsa el siguiente enlace para volver al inicio: </p>");
-		out.println("<a href=paginaInicial.html>Home</a>");
+		out.println("<a href=paginaInicial.html>coches</a>");
 		out.println("</body>");
 		out.println("</html>");
 		
 	}
-	
+	@Override
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException  { 
+		
+	}
 
 }
