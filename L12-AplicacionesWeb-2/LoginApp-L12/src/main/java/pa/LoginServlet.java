@@ -1,6 +1,7 @@
 package pa;
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,10 +21,14 @@ public class LoginServlet extends HttpServlet {
 	String usuarioreq=req.getParameter("fname"); //campos del login.html
 	
 	String passreq=req.getParameter("contra");
+	RequestDispatcher dispatcher;
 	
 	if ((usuarioreq.equals(usuario))&&(passreq.equals(contraseña))){
-		
-		
+	 dispatcher=req.getRequestDispatcher("/welcome.jsp");
+	 dispatcher.forward(req, resp);
+	}
+	else {
+		resp.getWriter().println("<p style='color.red'>Falta el nombre o la contraseña</p>");
 	}
 	}
 }
