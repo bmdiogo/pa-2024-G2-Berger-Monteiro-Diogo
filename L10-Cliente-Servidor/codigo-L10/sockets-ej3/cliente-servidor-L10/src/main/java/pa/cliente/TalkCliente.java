@@ -20,22 +20,22 @@ public class TalkCliente {
 	    	   DataOutputStream out = 
 	    			  new DataOutputStream(client.getOutputStream());
 	           DataInputStream in = 
-	        		  new DataInputStream(client.getInputStream());	    		  
-	          ) {
+	        		  new DataInputStream(client.getInputStream())) {
 	         
 	          System.out.println("Client says: Acabo de conectar con " 
 	                       + client.getRemoteSocketAddress());
+	          //Escribimos un mensaje al servidor
+		         out.writeUTF("Hola desde " + client.getLocalSocketAddress());
 	          Scanner sc = new Scanner(System.in);
-	          /*El mensaje puede incluir espacios en blanco
-	          y termina con un retorno de carro*/
-	          sc.useDelimiter(Pattern.compile("\\n"));
-	          sc.next(); //leemos el mensaje del cliente
-	         //Escribimos un mensaje al servidor
-	         out.writeUTF("Hola desde " + client.getLocalSocketAddress());
-	          while(sc.next()!="Bye") {
-	        	  out.writeUTF(sc.next());
+	             String mensaje=sc.nextLine();
+	          while(!mensaje.equals("bye")) {
+	        	  out.writeUTF(mensaje);
+	        	  /*El mensaje puede incluir espacios en blanco
+		          y termina con un retorno de carro*/
+		          sc.useDelimiter(Pattern.compile("\\n"));
 	         //leemos el mensaje del servidor
 	         System.out.println("Server says: " + in.readUTF());
+	         mensaje=sc.nextLine();
 	          }
 	      }catch(IOException e) {
 	        //  e.printStackTrace();

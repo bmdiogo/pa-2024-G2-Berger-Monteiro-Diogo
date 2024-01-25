@@ -1,15 +1,17 @@
 package pa.impresos;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Factura {
+public class Factura implements Serializable {
 	private int id;
 	private LocalDate fecha;
 	private String cliente;
 	private ArrayList<LineaFactura> lineas;
 	private Float total;
 	static int ultimoID=1;
+	private static final long serialVersionUID=1L;
 	private final static int MAXLINEAS=6;
 	public Factura(String nom) {
 		id=ultimoID;

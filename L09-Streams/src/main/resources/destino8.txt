@@ -1,0 +1,6 @@
+a
+Id factura: 8Fecha: 2024-01-25
+Cliente: Gloria Martinez
+Fecha         Servicio        Importe   
+----------------------------------------
+Total importe: 0.0

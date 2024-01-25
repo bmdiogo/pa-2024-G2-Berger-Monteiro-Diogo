@@ -23,7 +23,7 @@ public class SecondServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException  { 
 		response.setContentType("text/html;charset=UTF-8");
 		String asignaturaElegida = request.getParameter("asignatura");
-		if (asignaturaElegida=="PA") {
+		if (asignaturaElegida.equals("PA")) {
 			request.getRequestDispatcher("/WEB-INF/horarioPA.html").forward(request,response);
 		}
 		else {

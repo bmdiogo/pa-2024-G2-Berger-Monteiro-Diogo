@@ -71,7 +71,11 @@ public class MailItem implements Serializable {
         System.out.println("Message: " + message);
         System.out.println();
     }
-  FileOutputStream fileOut=new FileOutputStream("fichero.txt");
-  ObjectOutputStream objOut=new ObjectOutputStream(fileOut);
-  ObjectOutputStream.writeObject(MailItem);
-}
+    public void writeToDisk() {
+        try (FileOutputStream fileOut = new FileOutputStream("fichero.txt");
+             ObjectOutputStream objOut = new ObjectOutputStream(fileOut)) {
+            objOut.writeObject(this); // Debes pasar una instancia específica de MailItem, en este caso, 'this'
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }}

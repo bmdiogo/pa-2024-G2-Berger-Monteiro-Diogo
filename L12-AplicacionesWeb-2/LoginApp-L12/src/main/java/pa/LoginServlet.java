@@ -28,6 +28,8 @@ public class LoginServlet extends HttpServlet {
 	 dispatcher.forward(req, resp);
 	}
 	else {
+		dispatcher=req.getRequestDispatcher("examen.html");
+		dispatcher.include(req, resp);
 		resp.getWriter().println("<p style='color.red'>Falta el nombre o la contraseña</p>");
 	}
 	}

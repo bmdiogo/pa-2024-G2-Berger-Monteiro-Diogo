@@ -21,20 +21,22 @@ public class TalkServidor {
 	               SocketTimeoutException */
 	            serverSocket.setSoTimeout(MILISEG_ESPERA);
 	    		
-	            try (Socket server = serverSocket.accept();
+	            try (Socket cliente = serverSocket.accept();
 	                 DataInputStream in = 
-	                        new DataInputStream(server.getInputStream());
+	                        new DataInputStream(cliente.getInputStream());
 	                 DataOutputStream out = 
-	                        new DataOutputStream(server.getOutputStream());) {
+	                        new DataOutputStream(cliente.getOutputStream());) {
 	                    
-	                 System.out.println("Server says: Acabo de conectar con " + server.getRemoteSocketAddress());
-	            while(in.readUTF()!="Bye") {
-	                 System.out.println("Client says: "+in.readUTF());
-	             
-	                 
+	                 System.out.println("Server says: Acabo de conectar con " + cliente.getRemoteSocketAddress());
+	                 String mensaje= in.readUTF();
+	            while(!mensaje.equals("bye")) {
+	                 System.out.println("Client says: "+mensaje);
 	                 out.writeUTF("Recuerda que debes teclear Bye para terminar la conversación...");
+	                 mensaje=in.readUTF();
+	                 
+	                 
 	            }
-	            out.writeUTF("Gracias por conectarte con " + server.getLocalSocketAddress()
+	            out.writeUTF("Gracias por conectarte con " + cliente .getLocalSocketAddress()
                 + " Hasta la próxima!");
 	            }catch(SocketTimeoutException s) {
 	                System.out.println("Socket timed out!");

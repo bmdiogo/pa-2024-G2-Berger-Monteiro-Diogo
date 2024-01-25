@@ -1,0 +1,6 @@
+a
+Id factura: 1Fecha: 2024-01-25
+Cliente: Pedro Garcia
+Fecha         Servicio        Importe   
+----------------------------------------
+Total importe: 0.0
